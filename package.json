@@ -4,10 +4,9 @@
   "description": "This repo contains a component leveraging HTML2Canvas and the Media Share API to take a screenshot and share it, with options for watermarks",
   "main": "screenshot-share.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack serve --config webpack.config.js",
-    "prod": "webpack --mode production",
-    "deploy": "gh-pages -d dist"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
