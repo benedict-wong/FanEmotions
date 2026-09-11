@@ -1,0 +1,183 @@
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+// 1s fade out
+.fadeOut {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  pointer-events: none;
+}
+
+// 0.25s fade out
+.fadeOutFast {
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  pointer-events: none;
+}
+
+// Fade out using opacity
+@-webkit-keyframes fadeOutOpacity {
+  0% {
+    opacity: var(--showHideOpacity);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutOpacity {
+  0% {
+    opacity: var(--showHideOpacity);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOutOpacity {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOutOpacity;
+  animation-name: fadeOutOpacity;
+  pointer-events: none;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// 1s fade in
+.fadeIn {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  pointer-events: all;
+}
+
+// 0.25s fade in
+.fadeInFast {
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  pointer-events: all;
+}
+
+////////////////
+// Loading dots
+// https://martinwolf.org/before-2018/blog/2015/01/pure-css-savingloading-dots-animation/
+// HTML:
+//   <div id="loadingDots" class="loading"><span>.</span><span>.</span><span>.</span></div>
+// Suggested use:
+//   Place the above div within your intro button, replace button's innerHTML with text in ui-manager after the click listener has loaded
+////////////////
+@keyframes blink {
+  /**
+     * At the start of the animation the dot
+     * has an opacity of .2
+     */
+  0% {
+    opacity: 0.2;
+  }
+  /**
+     * At 20% the dot is fully visible and
+     * then fades out slowly
+     */
+  20% {
+    opacity: 1;
+  }
+  /**
+     * Until it reaches an opacity of .2 and
+     * the animation can start again
+     */
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.loading span {
+  padding: 0;
+  margin: 0;
+  /**
+     * Use the blink animation, which is defined above
+     */
+  animation-name: blink;
+  /**
+     * The animation should take 1.4 seconds
+     */
+  animation-duration: 1.4s;
+  /**
+     * It will repeat itself forever
+     */
+  animation-iteration-count: infinite;
+  /**
+     * This makes sure that the starting style (opacity: .2)
+     * of the animation is applied before the animation starts.
+     * Otherwise we would see a short flash or would have
+     * to set the default styling of the dots to the same
+     * as the animation. Same applies for the ending styles.
+     */
+  animation-fill-mode: both;
+}
+
+.loading span:nth-child(2) {
+  /**
+     * Starts the animation of the third dot
+     * with a delay of .2s, otherwise all dots
+     * would animate at the same time
+     */
+  animation-delay: 0.2s;
+}
+
+.loading span:nth-child(3) {
+  /**
+     * Starts the animation of the third dot
+     * with a delay of .4s, otherwise all dots
+     * would animate at the same time
+     */
+  animation-delay: 0.4s;
+}
