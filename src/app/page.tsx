@@ -7,7 +7,7 @@ export default function Home() {
       <Link href="/">
         <h1 id="fanemotions-logo">FanEmotions</h1>
       </Link>
-      <SearchBar placeholder="Search for something..." />
+      <SearchBar placeholder="Search for a FanEmotion" />
     </main>
   )
 }
