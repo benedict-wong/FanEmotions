@@ -27,6 +27,7 @@
     "@eslint/json": "^0.13.2",
     "@eslint/markdown": "^7.3.0",
     "@stylistic/eslint-plugin": "^5.4.0",
+    "@types/react": "19.3.0",
     "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.36.0",
@@ -39,7 +40,7 @@
     "gltf-loader": "^1.0.0",
     "html-loader": "^5.1.0",
     "prettier": "^3.6.2",
-    "sass": "^1.89.0",
+    "sass": "^1.104.0",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
     "typescript-eslint": "^8.45.0"
