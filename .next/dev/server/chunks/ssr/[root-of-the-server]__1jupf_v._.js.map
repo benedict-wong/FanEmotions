@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Benedict/OneDrive/Documents/Work/FanEmotions/src/app/search/page.tsx"],"sourcesContent":["interface SearchResultsProps {\r\n  searchParams: Promise<{\r\n    query?: string\r\n  }>\r\n}\r\n\r\nexport default async function SearchResults({ searchParams }: SearchResultsProps) {\r\n  const { query } = await searchParams\r\n\r\n  return (\r\n    <main>\r\n      <h1> Search Results for: {query}</h1>\r\n      {/* Search the database for all results with the query and output each video here */}\r\n    </main>\r\n  )\r\n}\r\n"],"names":["SearchResults","searchParams","query"],"mappings":";;;;;;AAMe,eAAeA,cAAc,EAAEC,YAAY,EAAsB;IAC9E,MAAM,EAAEC,KAAK,EAAE,GAAG,MAAMD;IAExB,qBACE,8OAAC;kBACC,cAAA,8OAAC;;gBAAG;gBAAsBC;;;;;;;;;;;;AAIhC"}}]
+}
