@@ -1,3 +1,5 @@
+@use './styles/animation.scss';
+@use './styles/share.scss';
 * {
   box-sizing: border-box;
 }
@@ -59,9 +61,26 @@ body {
 body {
   background-color: #f7f7f7;
   color: #000;
-  font-family: 'Roboto', sans-serif;
 }
 .cantap {
   pointer-events: auto !important;
 }
 
+#fanemotions-logo {
+  font-family: var(--font-source-sans), sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 29px;
+
+  letter-spacing: 4px;
+}
+a:has(> #fanemotions-logo) {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:has(> #fanemotions-logo):visited {
+  color: inherit;
+  text-decoration: none;
+}
