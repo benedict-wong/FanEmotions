@@ -11,17 +11,27 @@ export default function Gallery() {
     {
       id: 1,
       title: 'Excited',
-      image: '/image/placeholder.jpg',
+      image: '/assets/image/placeholder.jpg',
     },
     {
       id: 2,
       title: 'Happy',
-      image: '/image/placeholder.jpg',
+      image: '/assets/image/placeholder.jpg',
     },
     {
       id: 3,
       title: 'Angry',
-      image: '/image/placeholder.jpg',
+      image: '/assets/image/placeholder.jpg',
+    },
+    {
+      id: 3,
+      title: 'Passionate',
+      image: '/assets/image/placeholder.jpg',
+    },
+    {
+      id: 3,
+      title: 'Amazed',
+      image: '/assets/image/placeholder.jpg',
     },
   ]
   return (
