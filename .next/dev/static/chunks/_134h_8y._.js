@@ -1196,8 +1196,10 @@ var _s = __turbopack_context__.k.signature();
 ;
 function SearchBar({ placeholder = 'Search...' }) {
     _s();
-    const [search, setSearch] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    const searchParams = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"])();
+    const query = searchParams.get('q') || '';
+    const [search, setSearch] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(query);
     function handleSearch(event) {
         setSearch(event.target.value);
     }
@@ -1205,24 +1207,27 @@ function SearchBar({ placeholder = 'Search...' }) {
         // When pressing enter and the search state is not empty, do the following below:
         if (event.key === 'Enter' && search.trim()) {
             // Handle search submission here. Launch the search results page with a search query parameter of the search state.
-            router.push(`/search?query=${encodeURIComponent(search.trim())}`);
+            router.push(`/search?q=${encodeURIComponent(search.trim())}`);
         }
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+        id: "searchbar",
         type: "search",
         placeholder: placeholder,
         value: search,
         onChange: handleSearch,
-        onKeyDown: handleEnter
+        onKeyDown: handleEnter,
+        autoComplete: "off"
     }, void 0, false, {
         fileName: "[project]/src/app/components/SearchBar.tsx",
-        lineNumber: 25,
+        lineNumber: 27,
         columnNumber: 10
     }, this);
 }
-_s(SearchBar, "XTSRYpq6cOcoZJXUP2MOhw/+PLM=", false, function() {
+_s(SearchBar, "wTeTuGs6aU1KhU1D3FZEKs5LvPQ=", false, function() {
     return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"]
     ];
 });
 _c = SearchBar;
