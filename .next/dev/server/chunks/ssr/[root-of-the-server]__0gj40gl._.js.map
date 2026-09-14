@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Benedict/OneDrive/Documents/Work/FanEmotions/src/app/components/SearchBar.tsx"],"sourcesContent":["interface SearchBarProps {\r\n  placeholder?: string\r\n}\r\n\r\nexport default function SearchBar({ placeholder = 'Search...' }: SearchBarProps) {\r\n  return <input type=\"search\" placeholder={placeholder} />\r\n}\r\n"],"names":["SearchBar","placeholder","type"],"mappings":";;;;;;AAIe,SAASA,UAAU,EAAEC,cAAc,WAAW,EAAkB;IAC7E,qBAAO,8OAAC;QAAMC,MAAK;QAASD,aAAaA;;;;;;AAC3C"}},
-    {"offset": {"line": 30, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Benedict/OneDrive/Documents/Work/FanEmotions/src/app/page.tsx"],"sourcesContent":["import SearchBar from './components/SearchBar'\r\nimport Link from 'next/link'\r\n\r\nexport default function Home() {\r\n  return (\r\n    <main>\r\n      <Link href=\"/\">\r\n        <h1 id=\"fanemotions-logo\">FanEmotions</h1>\r\n      </Link>\r\n      <SearchBar placeholder=\"Search for something...\" />\r\n    </main>\r\n  )\r\n}\r\n"],"names":["Home","href","id","placeholder"],"mappings":";;;;;AAAA;AACA;;;;AAEe,SAASA;IACtB,qBACE,8OAAC;;0BACC,8OAAC,0LAAI;gBAACC,MAAK;0BACT,cAAA,8OAAC;oBAAGC,IAAG;8BAAmB;;;;;;;;;;;0BAE5B,8OAAC,iJAAS;gBAACC,aAAY;;;;;;;;;;;;AAG7B"}}]
-}
