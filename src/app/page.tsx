@@ -1,13 +1,13 @@
-import SearchBar from './components/SearchBar'
-import Link from 'next/link'
+import Gallery from './components/Gallery'
+import Header from './components/Header'
 
 export default function Home() {
   return (
-    <main>
-      <Link href="/">
-        <h1 id="fanemotions-logo">FanEmotions</h1>
-      </Link>
-      <SearchBar placeholder="Search for a FanEmotion" />
-    </main>
+    <>
+      <Header />
+      <main>
+        <Gallery></Gallery>
+      </main>
+    </>
   )
 }
