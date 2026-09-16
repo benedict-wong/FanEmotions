@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 interface SearchBarProps {
@@ -11,6 +11,19 @@ export default function SearchBar({ placeholder = 'Search...' }: SearchBarProps)
   const searchParams = useSearchParams()
   const query = searchParams.get('q') || ''
   const [search, setSearch] = useState(query)
+
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY >= 150)
+    }
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   function handleSearch(event: React.ChangeEvent<HTMLInputElement>) {
     setSearch(event.target.value)
@@ -24,5 +37,16 @@ export default function SearchBar({ placeholder = 'Search...' }: SearchBarProps)
     }
   }
 
-  return <input id="searchbar" type="search" placeholder={placeholder} value={search} onChange={handleSearch} onKeyDown={handleEnter} autoComplete="off" />
+  return (
+    <input
+      className={`${scrolled ? 'search-scrolled' : ''}`}
+      id="searchbar"
+      type="search"
+      placeholder={placeholder}
+      value={search}
+      onChange={handleSearch}
+      onKeyDown={handleEnter}
+      autoComplete="off"
+    />
+  )
 }
