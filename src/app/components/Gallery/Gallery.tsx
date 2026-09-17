@@ -1,4 +1,5 @@
-import Card from './Card'
+import Card from '../Card/Card'
+import styles from './gallery.module.scss'
 
 type FanEmotion = {
   id: number
@@ -85,7 +86,7 @@ export default function Gallery() {
     },
   ]
   return (
-    <div className="gallery">
+    <div className={styles.gallery}>
       {fanEmotions.map((fanEmotion) => (
         <Card
           key={fanEmotion.id}

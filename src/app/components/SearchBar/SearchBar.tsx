@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import styles from './searchbar.module.scss'
 
 interface SearchBarProps {
   placeholder?: string
@@ -39,7 +40,7 @@ export default function SearchBar({ placeholder = 'Search...' }: SearchBarProps)
 
   return (
     <input
-      className={`${scrolled ? 'search-scrolled' : ''}`}
+      className={`${styles.searchbar} ${scrolled ? styles['search-scrolled'] : ''}`}
       id="searchbar"
       type="search"
       placeholder={placeholder}

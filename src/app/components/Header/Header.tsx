@@ -1,9 +1,10 @@
 'use client'
 
-import SearchBar from './SearchBar'
+import SearchBar from '../SearchBar/SearchBar'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import Logo from '../components/Logo/Logo'
+import Logo from '../Logo/Logo'
+import styles from './header.module.scss'
 
 export default function Header() {
   const router = useRouter()
@@ -20,12 +21,12 @@ export default function Header() {
   }
 
   return (
-    <header className="header">
-      <div id="header-top-right">
-        <button id="upload-button" onClick={() => handleClick('upload')}>
+    <header className={styles.header}>
+      <div className={styles['top-right']}>
+        <button id="upload-button" className={styles['header-button']} onClick={() => handleClick('upload')}>
           Upload
         </button>
-        <button id="signin-button" onClick={() => handleClick('signin')}>
+        <button id="signin-button" className={styles['header-button']} onClick={() => handleClick('signin')}>
           Sign in
         </button>
       </div>
