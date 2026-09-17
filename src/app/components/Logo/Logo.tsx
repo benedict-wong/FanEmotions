@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import styles from './logo.module.scss'
 
 interface LogoProps {
   mode: 'black' | 'white'
@@ -6,7 +7,7 @@ interface LogoProps {
 
 export default function Logo({ mode }: LogoProps) {
   return (
-    <Link href="/" id="fanemotions-logo" className={`fanemotions-logo-${mode}`}>
+    <Link href="/" className={`${styles.logo} ${styles[mode]}`}>
       FanEmotions
     </Link>
   )

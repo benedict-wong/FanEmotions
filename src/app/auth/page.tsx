@@ -1,12 +1,13 @@
-import AuthSwitch from '../components/AuthSwitch'
+import AuthSwitch from '../components/AuthSwitch/AuthSwitch'
 import Signin from '../components/Signin/Signin'
 import Logo from '../components/Logo/Logo'
+import styles from './auth.module.scss'
 
 export default async function AuthPage() {
   return (
-    <div id="auth-page">
+    <div className={styles.container}>
       <Logo mode="black" />
-      <div className="auth-side-container">
+      <div className={styles['side-container']}>
         <AuthSwitch />
         <Signin />
       </div>
