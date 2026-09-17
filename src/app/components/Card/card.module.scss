@@ -1,0 +1,29 @@
+.card {
+  max-width: 25vw;
+  text-align: center;
+  background-color: #969696;
+  border-radius: 3px;
+  color: #fff;
+  font-family: var(--font-roboto), sans-serif;
+  user-select: none;
+}
+
+.preview {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.metrics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1vw 1vh 1vw;
+  color: #e2e2de;
+  user-select: none;
+}
+
+.metrics-entry:hover {
+  color: #fff;
+}

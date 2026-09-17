@@ -1,0 +1,24 @@
+.container > a {
+  position: absolute;
+  margin-top: 5vh;
+  margin: 0.67em auto;
+  left: 0;
+  right: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://img1.wsimg.com/isteam/getty/2252459686/:/rs=w:1920,m);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.side-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 20%;
+  box-shadow: 3px 0 3px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}

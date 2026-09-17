@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 1vw;
+  width: 100%;
+  padding: 0.75vh 1vw 0.75vh 0;
+  background-color: #2e3a4b;
+}
+
+.top-right button {
+  padding: 0.5vh 0.75vw;
+  margin: 0;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #fff;
+  background: #0c8ce9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-open-sans), sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+}

@@ -1,0 +1,18 @@
+.searchbar {
+  height: 5vh;
+  width: 50%;
+  font-size: 1.5vh;
+  padding-left: 1vw;
+}
+
+.searchbar:focus {
+  outline: none;
+  box-shadow: none; /* Required for Chrome, Safari, and Bootstrap */
+}
+
+.search-scrolled {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  margin-top: 5vh;
+}
