@@ -1,15 +1,17 @@
 .container {
   display: flex;
   width: 60%;
+  gap: 30px;
   margin: 5vh auto 5vh auto;
-  justify-content: space-around;
   font-family: var(--font-open-sans), sans-serif;
   font-size: 1.5rem;
+  justify-content: center;
 }
 
 .option {
   user-select: none;
   position: relative;
+  white-space: nowrap;
   cursor: pointer;
 }
 

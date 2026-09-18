@@ -2,19 +2,18 @@
 import { useState } from 'react'
 import styles from './authswitch.module.scss'
 
-export default function AuthSwitch() {
-  const [signinActive, setsigninActive] = useState(true)
+interface AuthSwitchProps {
+  signinActive: boolean
+  setSigninActive: (value: boolean) => void
+}
 
-  function handleClick(signin: boolean) {
-    setsigninActive(signin)
-  }
-
+export default function AuthSwitch({ signinActive, setSigninActive }: AuthSwitchProps) {
   return (
     <div className={styles.container}>
-      <span className={`${styles.option} ${signinActive ? styles.active : ''}`} onClick={() => handleClick(true)}>
+      <span className={`${styles.option} ${signinActive ? styles.active : ''}`} onClick={() => setSigninActive(true)}>
         Sign in
       </span>
-      <span className={`${styles.option}  ${signinActive ? '' : styles.active}`} onClick={() => handleClick(false)}>
+      <span className={`${styles.option}  ${signinActive ? '' : styles.active}`} onClick={() => setSigninActive(false)}>
         Register
       </span>
     </div>
