@@ -1,7 +1,5 @@
-# A-Frame Template
+# FanEmotions
 
-This repo utilizes Zappar's A-Frame integration to create WebXR experiences.
+This repo hosts all development for the upcoming FanEmotions website. Built in React and Next.js.
 
-# Dependencies
 
-Zappar
