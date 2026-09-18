@@ -18,7 +18,32 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 20%;
+  width: clamp(300px, 25vw, 500px);
+  flex-shrink: 0;
   box-shadow: 3px 0 3px rgba(0, 0, 0, 0.2);
   background-color: #fff;
+}
+
+.side-container > a {
+  font-size: 2em;
+}
+
+.side-container > a:focus {
+  outline: none;
+}
+
+@media (min-width: 1701px) {
+  .side-container > a {
+    position: absolute;
+    // top: 5vh;
+    font-size: 3em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 767px) {
+  .side-container {
+    width: 100%;
+  }
 }
