@@ -1,0 +1,42 @@
+.title {
+  font-family: var(--font-roboto), sans-serif;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 5vh;
+}
+
+.form {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.register-name {
+  display: flex;
+  gap: 20px;
+}
+
+.register-name input {
+  flex: 1;
+  min-width: 0;
+}
+
+.form > * {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.form input {
+  height: 66px;
+  font-size: 1em;
+  padding-left: 1vw;
+}
+
+.form .button {
+  height: 66px;
+  font-size: 1.5em;
+}
