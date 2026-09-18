@@ -5,7 +5,7 @@ import { Eye, EyeOff } from 'lucide-react'
 import styles from './passwordinput.module.scss'
 
 interface PasswordInputProps {
-  mode: 'signin' | 'signup'
+  mode: 'signin' | 'register'
 }
 
 export default function PasswordInput({ mode }: PasswordInputProps) {
