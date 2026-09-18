@@ -1,6 +1,7 @@
 'use client'
 
 import SearchBar from '../SearchBar/SearchBar'
+import Button from '../Button/Button'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Logo from '../Logo/Logo'
@@ -23,12 +24,12 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles['top-right']}>
-        <button id="upload-button" className={styles['header-button']} onClick={() => handleClick('upload')}>
+        <Button className={styles['header-button']} onClick={() => handleClick('upload')}>
           Upload
-        </button>
-        <button id="signin-button" className={styles['header-button']} onClick={() => handleClick('signin')}>
+        </Button>
+        <Button className={styles['header-button']} onClick={() => handleClick('signin')}>
           Sign in
-        </button>
+        </Button>
       </div>
       <Logo mode="black" />
       <SearchBar placeholder="Search for a FanEmotion" />
