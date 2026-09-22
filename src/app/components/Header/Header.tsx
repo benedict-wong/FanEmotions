@@ -7,7 +7,11 @@ import { useRouter } from 'next/navigation'
 import Logo from '../Logo/Logo'
 import styles from './header.module.scss'
 
-export default function Header() {
+interface HeaderProps {
+  mode?: 'default' | 'compact'
+}
+
+export default function Header({ mode = 'default' }: HeaderProps) {
   const router = useRouter()
 
   function handleClick(direction: string) {
@@ -22,7 +26,7 @@ export default function Header() {
   }
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${mode === 'compact' ? styles.compact : ''}`}>
       <div className={styles['top-right']}>
         <Button className={styles['header-button']} onClick={() => handleClick('upload')}>
           Upload
@@ -31,7 +35,7 @@ export default function Header() {
           Sign in
         </Button>
       </div>
-      <Logo mode="black" />
+      <Logo mode={mode === 'compact' ? 'white' : 'black'} />
       <SearchBar placeholder="Search for a FanEmotion" />
     </header>
   )
