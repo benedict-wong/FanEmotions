@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { Search } from 'lucide-react'
 import styles from './searchbar.module.scss'
 
 interface SearchBarProps {
