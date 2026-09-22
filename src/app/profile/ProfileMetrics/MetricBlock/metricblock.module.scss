@@ -1,0 +1,24 @@
+.metric-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid #646f7e;
+  width: fit-content;
+  padding: 0.5% 15% 0.5% 0.5%;
+  border-radius: 15px;
+  background: #f8fafc;
+}
+
+.metric-category {
+  font-family: var(--font-roboto), sans-serif;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.metric-block h2 {
+  margin: 0;
+  font-family: var(--font-source-sans), sans-serif;
+  color: #064e82;
+  font-weight: 700;
+}
