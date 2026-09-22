@@ -1,7 +1,7 @@
 .searchbar {
-  height: 5vh;
+  height: clamp(50px, 10vh, 60px);
   width: 50%;
-  font-size: 1.5vh;
+  font-size: 1.5rem;
   padding-left: 1vw;
 }
 
