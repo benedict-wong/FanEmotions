@@ -1,5 +1,5 @@
 .button {
-  padding: 0.5vh 0.75vw;
+  padding: clamp(6px, 0.5vh, 10px) clamp(8px, 0.75vw, 16px);
   margin: 0;
   border: 1px solid #000;
   border-radius: 5px;
@@ -11,4 +11,5 @@
   font-family: var(--font-open-sans), sans-serif;
   font-size: 1rem;
   cursor: pointer;
+  white-space: nowrap;
 }
