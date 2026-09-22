@@ -12,6 +12,28 @@
   align-items: flex-end;
   gap: 1vw;
   width: 100%;
-  padding: 0.75vh 1vw 0.75vh 0;
+  padding: clamp(4px, 0.5%, 8px) clamp(10px, 2%, 20px) clamp(4px, 0.5%, 8px) 0;
   background-color: #2e3a4b;
+}
+
+.compact {
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  gap: 2vw;
+  background: #2e3a4b;
+  padding: 0.5em 0;
+}
+
+.compact a {
+  margin: 0 1em;
+}
+
+.compact .top-right {
+  order: 3;
+  width: initial;
+}
+
+.compact input {
+  height: 50px;
 }
