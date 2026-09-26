@@ -8,7 +8,7 @@ interface EmailInputProps {
 export default function PasswordInput({ mode }: EmailInputProps) {
   return (
     <div className={styles['input-container']}>
-      <input className={styles['input-field']} name="email" type="email" placeholder="Email" autoComplete={mode === 'signin' ? 'username' : 'email'} />
+      <input className={styles['input-field']} name="email" type="email" placeholder="Email" autoComplete={mode === 'signin' ? 'username' : 'email'} required />
     </div>
   )
 }
