@@ -1,0 +1,25 @@
+.menu {
+  position: fixed;
+  min-width: 125px;
+  right: 0;
+  top: calc(var(--header-height));
+  background: #474747;
+  color: #fff;
+  padding: 10px;
+  box-shadow: 0 9px 25px 0 rgba(0, 0, 0, 0.78);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+}
+
+.divider {
+  margin-inline: -10px;
+  width: auto;
+}
