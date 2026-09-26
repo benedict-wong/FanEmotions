@@ -39,7 +39,20 @@
   font-size: 1.5em;
 }
 
+.confirmation {
+  padding: 0 5%;
+}
+
+.error-message {
+  color: #f48771;
+}
+
+.resend {
+  color: #1800f0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .forgot {
-  font-family: var(--font-roboto), sans-serif;
-  text-align: center;
+  margin: 0;
 }
