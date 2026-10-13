@@ -1,0 +1,46 @@
+.account-saved {
+  display: none;
+  color: #00d000;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.visible {
+  display: block;
+}
+
+.username-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 50%;
+  margin-bottom: 20px;
+}
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 50%;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  margin: 0;
+}
+
+.save-button {
+  border: none;
+  padding: 5px 5px;
+  white-space: nowrap;
+  width: 25%;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.error {
+  font-size: 0.9rem;
+  color: #9b001f;
+  margin: 0;
+}
