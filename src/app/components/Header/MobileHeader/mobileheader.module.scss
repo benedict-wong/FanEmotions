@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  position: relative;
+  z-index: 3;
+  justify-content: space-around;
+  margin: 0;
+  background-color: #2e3a4b;
+  padding: 1vh 0;
+}
+
+.logo {
+  text-align: center;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.searchDiv {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBarDiv {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    max-height 0.3s ease-out,
+    opacity 0.25s ease-out;
+}
+
+.searchBarDiv.show {
+  // display: flex;
+  max-height: 100px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.searchBar {
+  width: 100%;
+  margin: 1vh 1vw;
+}
