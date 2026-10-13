@@ -18,3 +18,11 @@
     object-fit: cover;
   }
 }
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+}
