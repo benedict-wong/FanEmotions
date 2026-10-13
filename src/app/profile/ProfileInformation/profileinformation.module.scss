@@ -1,0 +1,37 @@
+.profile-information {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.name {
+  //   font-size: 36px;
+  margin-bottom: 0;
+}
+
+.personal {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.personal-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media (max-width: 768px) {
+  .profile-information {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .name {
+    margin-top: 0;
+    text-align: center;
+  }
+  .username {
+    text-align: center;
+  }
+}
