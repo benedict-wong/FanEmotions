@@ -9,16 +9,17 @@ interface CardProps {
   views: number
   likes: number
   length: number
+  className?: string
 }
 
-export default function Card({ image, description, views, likes, length }: CardProps) {
+export default function Card({ image, description, views, likes, length, className }: CardProps) {
   const minutes = Math.floor(length / 60)
   const seconds = Math.floor(length % 60)
 
   const duration = `${minutes}:${seconds.toString().padStart(2, '0')}`
 
   return (
-    <article className={styles.card}>
+    <article className={`${styles.card} ${className ?? ''}`}>
       <img className={styles.preview} src={image} alt={description} />
       <div className={styles['card-information']}>
         <span className={styles['video-length']}>{duration}</span>

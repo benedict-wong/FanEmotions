@@ -7,7 +7,11 @@ import PasswordInput from '../PasswordInput/PasswordInput'
 import Button from '../Button/Button'
 import styles from './signin.module.scss'
 
-export default function Signin() {
+interface SigninProps {
+  className?: string
+}
+
+export default function Signin({ className }: SigninProps) {
   const [email, setEmail] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
   const [resendAvailable, setResendAvailable] = useState(false)
@@ -44,7 +48,7 @@ export default function Signin() {
     const formData = new FormData(e.currentTarget)
     const email = formData.get('email') as string
 
-    const password = formData.get('password') as string
+    const password = formData.get('signin_password') as string
     const supabase = createClient()
     setErrorMessage('')
 
@@ -89,8 +93,8 @@ export default function Signin() {
     }
 
     // Successful sign in here:
-    // Redirect user to profile page.
-    router.replace('/profile')
+    // Redirect user to home page.
+    router.replace('/')
   }
   async function handleResend() {
     if (!email || !resendAvailable) {
@@ -113,11 +117,11 @@ export default function Signin() {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${className ?? ''}`}>
       <h1 className={styles.title}>Welcome back!</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <EmailInput mode="signin" />
-        <PasswordInput mode="signin" />
+        <PasswordInput name="signin_password" mode="signin" />
         <p className={styles.forgot}>
           Forgot your <a href="#">password</a>?
         </p>

@@ -7,17 +7,19 @@ import styles from './passwordinput.module.scss'
 interface PasswordInputProps {
   mode: 'signin' | 'register'
   password?: string
+  name: string
   setPassword?: (password: string) => void
+  className?: string
 }
 
-export default function PasswordInput({ password, setPassword, mode }: PasswordInputProps) {
+export default function PasswordInput({ name, password, setPassword, mode, className }: PasswordInputProps) {
   const [showPassword, setShowPassword] = useState(false)
 
   return (
-    <div className={styles['input-container']}>
+    <div className={`${styles['input-container']} ${className ?? ''}`}>
       <input
         className={styles['input-field']}
-        name="password"
+        name={name}
         type={showPassword ? 'text' : 'password'}
         placeholder="Password"
         required

@@ -1,5 +1,6 @@
 import Card from '../Card/Card'
 import styles from './gallery.module.scss'
+import type { HTMLAttributes } from 'react'
 
 type FanEmotion = {
   id: number
@@ -8,7 +9,7 @@ type FanEmotion = {
   length: number
 }
 
-export default function Gallery() {
+export default function Gallery({ className }: HTMLAttributes<HTMLDivElement>) {
   const fanEmotions: FanEmotion[] = [
     {
       id: 1,
@@ -102,7 +103,7 @@ export default function Gallery() {
     },
   ]
   return (
-    <div className={styles.gallery}>
+    <div className={`${styles.gallery} ${className ?? ''}`}>
       {fanEmotions.map((fanEmotion) => (
         <Card
           key={fanEmotion.id}
