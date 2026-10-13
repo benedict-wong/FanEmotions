@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0 25vw;
+  margin-top: 10vh;
+}
+
+.sidebar {
+  flex-basis: 25%;
+  background-color: bisque;
+}
+.sidebar-options {
+  list-style: none;
+}
+
+.main {
+  padding: clamp(2vh, 20px, 5vh);
+  padding-left: clamp(3vh, 50px, 6vh);
+  flex-basis: 75%;
+  background-color: grey;
+}
