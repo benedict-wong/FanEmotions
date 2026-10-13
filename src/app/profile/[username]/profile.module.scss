@@ -1,0 +1,16 @@
+.container {
+}
+
+.profile-first-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+.profile-gallery-separator {
+  margin: 5vh 10vw;
+  border: 1px solid #000;
+}
