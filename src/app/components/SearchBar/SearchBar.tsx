@@ -1,15 +1,17 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { Search } from 'lucide-react'
 import styles from './searchbar.module.scss'
 
 interface SearchBarProps {
   placeholder?: string
+  className?: string
 }
 
-export default function SearchBar({ placeholder = 'Search...' }: SearchBarProps) {
+export default function SearchBar({ placeholder = 'Search...', className }: SearchBarProps) {
   const router = useRouter()
+  const pathname = usePathname()
   const searchParams = useSearchParams()
   const query = searchParams.get('q') || ''
   const [search, setSearch] = useState(query)
@@ -17,6 +19,13 @@ export default function SearchBar({ placeholder = 'Search...' }: SearchBarProps)
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
+    const scrollPages = ['/', '/search']
+
+    if (!scrollPages.includes(pathname)) {
+      setScrolled(false)
+      return
+    }
+
     const handleScroll = () => {
       setScrolled(window.scrollY >= 150)
     }
@@ -41,7 +50,7 @@ export default function SearchBar({ placeholder = 'Search...' }: SearchBarProps)
 
   return (
     <input
-      className={`${styles.searchbar} ${scrolled ? styles['search-scrolled'] : ''}`}
+      className={`${styles.searchbar} ${scrolled ? styles['search-scrolled'] : ''} ${className ?? ''}`}
       id="searchbar"
       type="search"
       placeholder={placeholder}
