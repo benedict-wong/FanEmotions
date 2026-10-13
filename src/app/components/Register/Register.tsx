@@ -1,17 +1,23 @@
 'use client'
 import { createClient } from '@/lib/supabase/client'
 import { useRef, useState } from 'react'
+import { getUsernameErrorMessage } from '@/lib/register/username'
 import styles from './register.module.scss'
 import EmailInput from '../EmailInput/EmailInput'
 import PasswordInput from '../PasswordInput/PasswordInput'
 import Button from '../Button/Button'
 import Confirmation from './Confirmation/Confirmation'
 
-export default function Register() {
+interface RegisterProps {
+  className?: string
+}
+
+export default function Register({ className }: RegisterProps) {
   const formRef = useRef<HTMLFormElement>(null)
   const confirmationRef = useRef<HTMLDivElement>(null)
   const [password, setPassword] = useState('')
-  const [mode, setMode] = useState('')
+  const [mode, setMode] = useState<'signin' | 'register'>('register')
+  const [usernameErrorMessage, setUsernameErrorMessage] = useState('')
 
   const hasMinimumLength = password.length >= 8
   const hasUppercase = /[A-Z]/.test(password)
@@ -28,16 +34,35 @@ export default function Register() {
     }
     const formData = new FormData(e.currentTarget)
     const email = formData.get('email') as string
-    const password = formData.get('password') as string
+    const password = formData.get('register_password') as string
+    const username = formData.get('username') as string
+    const normalizedUsername = username.trim().toLowerCase()
     const firstName = formData.get('firstName') as string
     const lastName = formData.get('lastName') as string
     const supabase = createClient()
+
+    // Check if user name exists
+    const { data: existingProfile, error: usernameError } = await supabase.from('profiles').select('id').eq('username', normalizedUsername).maybeSingle()
+    if (usernameError) {
+      console.log(usernameError)
+      return
+    }
+
+    setUsernameErrorMessage('')
+    // Check if display name has already been taken (not UNIQUE)
+    const errorMessage = getUsernameErrorMessage(!!existingProfile, normalizedUsername)
+
+    if (errorMessage) {
+      setUsernameErrorMessage(errorMessage)
+      return
+    }
 
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
         data: {
+          username,
           first_name: firstName,
           last_name: lastName,
         },
@@ -69,7 +94,7 @@ export default function Register() {
   }
 
   return (
-    <>
+    <div className={className}>
       <h1 className={styles.title}>Welcome to FanEmotions!</h1>
       <form ref={formRef} className={styles.form} onSubmit={handleSubmit}>
         <div className={styles['register-name']}>
@@ -77,7 +102,17 @@ export default function Register() {
           <input id="register-lastName" type="text" name="lastName" placeholder="Last Name" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ' \-]+$" title="Please enter a valid first name." required></input>
         </div>
         <EmailInput mode="register" />
-        <PasswordInput password={password} setPassword={setPassword} mode="register" />
+        <input
+          type="text"
+          name="username"
+          placeholder="Display Name"
+          pattern="^[a-zA-Z0-9_-]{5,20}$"
+          autoComplete="username"
+          title="Display name must be 5-20 characters and can only contain letters, numbers, hyphens, and underscores"
+          required
+        ></input>
+        <p className={styles.error}>{usernameErrorMessage}</p>
+        <PasswordInput name="register_password" password={password} setPassword={setPassword} mode="register" />
         <div className={styles.requirements}>
           <p className={styles['form-password-requirement-description']}>Your password must</p>
           <ul className={styles['form-password-requirements']}>
@@ -93,6 +128,6 @@ export default function Register() {
         </Button>
       </form>
       <Confirmation mode={mode} ref={confirmationRef} />
-    </>
+    </div>
   )
 }
