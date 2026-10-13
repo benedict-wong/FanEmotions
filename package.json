@@ -60,8 +60,8 @@
     "storybook": "^10.6.0",
     "storybook-dark-mode": "^5.0.0",
     "style-loader": "^4.0.0",
-    "typescript": "^7.0.2",
-    "typescript-eslint": "^8.45.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.71.0",
     "vite": "latest",
     "vitest": "latest"
   },
@@ -69,6 +69,7 @@
     "@ffmpeg/core": "^0.12.10",
     "@ffmpeg/ffmpeg": "^0.12.10",
     "@ffmpeg/util": "^0.12.2",
+    "@mux/mux-node": "^15.5.0",
     "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.116.0",
     "argon2": "^0.45.1",
